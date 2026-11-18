@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John 👉🏻👈🏻</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0c0c10;
+  color: white;
+  font-family: Georgia, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 430px;
+}
+
+.page {
+  display: none;
+  animation: appear .5s ease;
+}
+
+#portada {
+  display: block;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 42px;
+  letter-spacing: 1px;
+  margin-bottom: 45px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+button {
+  background: #211d29;
+  color: white;
+  border: 1px solid #77658e;
+  border-radius: 15px;
+  padding: 17px 27px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #393047;
+}
+
+.card {
+  background: #19171f;
+  border: 1px solid #39313f;
+  border-radius: 20px;
+  padding: 28px 22px;
+  line-height: 1.8;
+}
+
+h2 {
+  color: #c9b2e9;
+  font-size: 25px;
+}
+
+.back {
+  margin-top: 25px;
+  font-size: 16px;
+  padding: 12px 22px;
+}
+
+.spotify {
+  color: #1ed760;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- PORTADA -->
+  <section id="portada" class="page">
+    <h1>John 👉🏻👈🏻</h1>
+    <div class="buttons">
+      <button onclick="go('mensaje')">👉🏻</button>
+      <button onclick="go('playlist')">👈🏻</button>
+    </div>
+  </section>
+
+  <!-- MENSAJE -->
+  <section id="mensaje" class="page">
+    <div class="card">
+      <h2>Un mensaje para John 💌</h2>
+      <p>
+        Hola John, quería decirte que sos una persona muy especial
+        y que me alegra haberte conocido. Espero que nunca dudes
+        de lo mucho que valés y de lo importante que podés llegar
+        a ser para alguien. Te deseo siempre cosas lindas, que
+        cumplas todo lo que te propongas y que nunca pierdas
+        esa forma de ser que te hace único.
+      </p>
+    </div>
+    <button class="back" onclick="go('portada')">← Volver</button>
+  </section>
+
+  <!-- PLAYLIST -->
+  <section id="playlist" class="page">
+    <div class="card">
+      <h2>Playlist para John 🎧</h2>
+      <p>Una canción especial para vos.</p>
+      <a class="spotify"
+         href="https://open.spotify.com/track/4s8yBpAQGIGA9IpL7MBsV4?si=czMwfJmcRgiaih55dZn0lQ"
+         target="_blank">
+         ▶ Escuchar en Spotify
+      </a>
+    </div>
+    <button class="back" onclick="go('portada')">← Volver</button>
+  </section>
+
+</div>
+
+<script>
+function go(id) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.style.display = 'none';
+  });
+
+  document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
